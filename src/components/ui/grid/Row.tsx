@@ -1,7 +1,7 @@
-import { FC } from 'react';
+import { PropsWithChildren, FC } from "react";
 
-const Row: FC = () => {
-    return <div>Row</div>
+const Row: FC<PropsWithChildren> = ({ children }) => {
+  return <div>{children}</div>;
 };
 
 export default Row;
