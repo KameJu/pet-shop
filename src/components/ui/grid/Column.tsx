@@ -1,4 +1,5 @@
 import { PropsWithChildren, FC } from "react";
+import styles from "./Column.module.css";
 
 interface IColumn {
   size: number;
@@ -6,7 +7,12 @@ interface IColumn {
 
 const Column: FC<PropsWithChildren<IColumn>> = ({ children, size }) => {
   return (
-    <div style={{ gridColumn: `span ${size} / span ${size}` }}>{children}</div>
+    <div
+      className={styles.column}
+      style={{ gridColumn: `span ${size} / span ${size}` }}
+    >
+      {children}
+    </div>
   );
 };
 

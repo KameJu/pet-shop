@@ -6,6 +6,7 @@ const App: FC = () => {
   return (
     <div className={styles.main}>
       <Nav></Nav>
+      <div className="mb-2"></div>
     </div>
   );
 };
