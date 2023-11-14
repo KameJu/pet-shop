@@ -1,7 +1,13 @@
-import { PropsWithChildren, FC } from 'react';
+import { PropsWithChildren, FC } from "react";
 
-const Column: FC<PropsWithChildren> = ({ children }) => {
-    return <div>{children}</div>
+interface IColumn {
+  size: number;
+}
+
+const Column: FC<PropsWithChildren<IColumn>> = ({ children, size }) => {
+  return (
+    <div style={{ gridColumn: `span ${size} / span ${size}` }}>{children}</div>
+  );
 };
 
 export default Column;

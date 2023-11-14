@@ -1,13 +1,19 @@
 import { FC } from "react";
 import Row from "../../ui/grid/Row";
+import Column from "../../ui/grid/Column";
 
 const Nav: FC = () => {
   return (
     <Row>
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-      <div>4</div>
+      <Column size={2}>
+        <div>1</div>
+      </Column>
+      <Column size={2}>
+        <div>2</div>
+      </Column>
+      <Column size={2}>
+        <div>3</div>
+      </Column>
     </Row>
   );
 };
