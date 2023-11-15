@@ -42,3 +42,10 @@ h1 {
 .btn:hover {
   @apply underline underline-offset-4;
 }
+
+.btn-gray {
+  @apply rounded-full text-yellow-300 bg-[#423F3F] py-1 px-3;
+}
+.btn-yellow {
+  @apply rounded-full text-[#423F3F] bg-yellow-300 py-1 px-3;
+}

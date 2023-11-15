@@ -2,15 +2,13 @@ import { FC } from "react";
 import styles from "./App.module.scss";
 import Nav from "../nav/Nav";
 import bacground from "../../../assets/images/background_image.jpg";
+import Main from "../main/Main";
 
 const App: FC = () => {
   return (
-    <div
-      className={styles.main}
-    >
-      {/* <img src={bacground} width={1600} height={1200} alt="test" /> */}
+    <div className={styles.main}>
       <Nav></Nav>
-      <div className="mb-2"></div>
+      <Main></Main>
     </div>
   );
 };
