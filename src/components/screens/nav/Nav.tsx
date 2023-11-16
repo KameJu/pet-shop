@@ -2,6 +2,7 @@ import { FC } from "react";
 import Row from "../../ui/grid/Row";
 import Column from "../../ui/grid/Column";
 import logo from "../../../assets/images/logo.svg";
+import { Link } from "react-router-dom";
 
 const Nav: FC = () => {
   return (
@@ -13,11 +14,21 @@ const Nav: FC = () => {
         </div>
       </Column>
       <Column className="flex flex-row justify-center gap-5" size={8}>
-        <div className="btn select">Main</div>
-        <div className="btn">Catalog</div>
-        <div className="btn">Accessories</div>
-        <div className="btn">Veloclub</div>
-        <div className="btn">About us</div>
+        <Link to={"/"} className="btn select">
+          Main
+        </Link>
+        <Link to={"/catalog"} className="btn">
+          Catalog
+        </Link>
+        <Link to={"/accessories"} className="btn">
+          Accessories
+        </Link>
+        <Link to={"/veloclub"} className="btn">
+          Veloclub
+        </Link>
+        <Link to={"/about-us"} className="btn">
+          About us
+        </Link>
       </Column>
     </Row>
   );
