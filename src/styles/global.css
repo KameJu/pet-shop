@@ -1,60 +1,70 @@
+/* TODO: refactor all *module.scss */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+	color-scheme: light dark;
+	color: rgba(255, 255, 255, 0.87);
+	background-color: #242424;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
 }
 
 body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  /* background-image: url(D:\Projects\React\pet-job\src\assets\images\background_image.jpg); */
-  @apply bg-[#131313] text-primary;
+	margin: 0;
+	min-width: 320px;
+	min-height: 100vh;
+	/* background-image: url(D:\Projects\React\pet-job\src\assets\images\background_image.jpg); */
+	@apply bg-[#131313] text-primary;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+	font-size: 3.2em;
+	line-height: 1.1;
 }
 
 .btn {
-  @apply text-primary;
+	@apply text-primary;
 }
 
 .select {
-  @apply underline underline-offset-4;
+	@apply underline underline-offset-4;
 }
 
 .btn:hover {
-  @apply underline underline-offset-4 cursor-pointer;
+	@apply underline underline-offset-4 cursor-pointer;
 }
 
 .btn-gray {
-  @apply rounded-full text-primary bg-gray py-1 px-3;
+	@apply rounded-full text-primary bg-gray py-1 px-3;
 }
 
 .btn-gray:hover {
-  @apply bg-dark-gray;
+	@apply bg-dark-gray;
 }
 
 .btn-yellow {
-  @apply rounded-full text-gray bg-primary py-1 px-3;
+	@apply rounded-full text-gray bg-primary py-1 px-3;
 }
 
 .btn-yellow:hover {
-  @apply bg-primary-dark;
+	@apply bg-primary-dark;
+}
+
+.card {
+	@apply border border-solid border-[#423F3F];
+}
+
+.card:hover {
+	@apply shadow-lg shadow-[#423F3F];
 }
