@@ -1,0 +1,7 @@
+.card{
+    @apply border border-solid border-[#423F3F];
+}
+
+.card:hover{
+    @apply shadow-lg shadow-[#423F3F];
+}

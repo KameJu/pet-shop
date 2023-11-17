@@ -23,7 +23,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   /* background-image: url(D:\Projects\React\pet-job\src\assets\images\background_image.jpg); */
-  @apply bg-[#131313];
+  @apply bg-[#131313] text-primary;
 }
 
 h1 {
@@ -32,7 +32,7 @@ h1 {
 }
 
 .btn {
-  @apply text-[#FDE047];
+  @apply text-primary;
 }
 
 .select {
@@ -44,17 +44,17 @@ h1 {
 }
 
 .btn-gray {
-  @apply rounded-full text-yellow-300 bg-[#423F3F] py-1 px-3;
+  @apply rounded-full text-primary bg-gray py-1 px-3;
 }
 
 .btn-gray:hover {
-  @apply bg-[#302f2f];
+  @apply bg-dark-gray;
 }
 
 .btn-yellow {
-  @apply rounded-full text-[#423F3F] bg-yellow-300 py-1 px-3;
+  @apply rounded-full text-gray bg-primary py-1 px-3;
 }
 
 .btn-yellow:hover {
-  @apply bg-[#ceb63e];
+  @apply bg-primary-dark;
 }

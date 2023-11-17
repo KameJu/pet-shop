@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Row from "../../ui/grid/Row";
 import Column from "../../ui/grid/Column";
-import logo from "../../../assets/images/logo.svg";
+import logo from "../../../../public/images/logo.svg";
 import { Link } from "react-router-dom";
 
 const Nav: FC = () => {

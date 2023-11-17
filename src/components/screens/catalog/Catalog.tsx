@@ -1,13 +1,33 @@
-import { FC } from "react";
-import Nav from "../nav/Nav";
+import { FC } from 'react'
+import Nav from '../nav/Nav'
+import Row from '../../ui/grid/Row'
+import Column from '../../ui/grid/Column'
+import CatalogItem from './catalog-item/CatalogItem'
+import { products } from './catalog-item/products.data.js'
+import { formatToCurrency } from '../../../utils/format-to-currency.js'
 
 const Catalog: FC = () => {
-  return (
-    <>
-      <Nav />
-      <div>Catalog</div>
-    </>
-  );
-};
+	return (
+		<>
+			<Nav />
+			<Row>
+				<Column size={2} />
+				<Column size={10} className='pr-10'>
+					<Row>
+						{products.map(product => (
+							<CatalogItem
+								key={product.id}
+								image={product.image}
+								type={product.type}
+								price={formatToCurrency(product.price)}
+								model={product.model}
+							/>
+						))}
+					</Row>
+				</Column>
+			</Row>
+		</>
+	)
+}
 
-export default Catalog;
+export default Catalog

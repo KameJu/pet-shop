@@ -1,6 +1,9 @@
 import { FC } from "react";
+import { useNavigate } from "react-router-dom";
 
 const MenuNav: FC = () => {
+  const nav = useNavigate();
+
   return (
     <>
       <div className="flex flex-col ml-14 mt-[20%]">
@@ -10,8 +13,12 @@ const MenuNav: FC = () => {
           Veloclub for a ride and good rest in the company of good people.
         </span>
         <div className="mt-8 flex gap-10">
-          <button className="btn-gray">TO CATALOG</button>
-          <button className="btn-yellow">JOIN THE CLUB</button>
+          <button onClick={() => nav("/catalog")} className="btn-gray">
+            TO CATALOG
+          </button>
+          <button onClick={() => nav("/veloclub")} className="btn-yellow">
+            JOIN THE CLUB
+          </button>
         </div>
       </div>
     </>
