@@ -29,6 +29,7 @@ const Nav: FC = () => {
 				<Link to={'/about-us'} className='btn'>
 					About us
 				</Link>
+        <Link to={'/Cart'} className='btn'>Cart</Link>
 			</Column>
 		</Row>
 	)

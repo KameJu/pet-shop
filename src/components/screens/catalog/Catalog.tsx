@@ -17,9 +17,10 @@ const Catalog: FC = () => {
 						{products.map(product => (
 							<CatalogItem
 								key={product.id}
+								id={product.id}
 								image={product.image}
 								type={product.type}
-								price={formatToCurrency(product.price)}
+								price={product.price}
 								model={product.model}
 							/>
 						))}

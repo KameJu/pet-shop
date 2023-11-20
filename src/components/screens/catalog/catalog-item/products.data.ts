@@ -1,10 +1,4 @@
-interface IProduct {
-	id: number
-	image: string
-	model: string
-	price: number
-	type: string
-}
+import { IProduct } from '../../../../types/product.interface'
 
 export const products: IProduct[] = [
 	{
