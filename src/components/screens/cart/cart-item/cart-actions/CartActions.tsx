@@ -1,23 +1,12 @@
-import { AddIcon, MinusIcon } from '@chakra-ui/icons'
-import { Button, HStack, Input, useNumberInput } from '@chakra-ui/react'
+// import { AddIcon, MinusIcon } from '@chakra-ui/icons'
+// import { Button, HStack, Input, useNumberInput } from '@chakra-ui/react'
 import { FC } from 'react'
-
-import { useActions } from '@/hooks/useActions'
-import { useCart } from '@/hooks/useCart'
-
-import { ICartItem } from '@/types/cart.interface'
+import { ICartItem } from '../../../../../types/cart.interface'
+import { useActions } from '../../../../../hooks/useActions'
+import { useCart } from '../../../../../hooks/useCart'
+import { FiTrash, FiPlus, FiMinus } from 'react-icons/fi'
 
 const CartActions: FC<{ item: ICartItem }> = ({ item }) => {
-	const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
-		useNumberInput({
-			step: 1,
-			defaultValue: 1
-		})
-
-	const inc = getIncrementButtonProps()
-	const dec = getDecrementButtonProps()
-	const input = getInputProps()
-
 	const { removeFromCart, changeQuantity } = useActions()
 
 	const { cart } = useCart()
@@ -25,41 +14,30 @@ const CartActions: FC<{ item: ICartItem }> = ({ item }) => {
 
 	return (
 		<div className='mt-3'>
-			<HStack>
-				<Button
-					{...dec}
+			<div className='flex items-center gap-2 text-white'>
+				<button
 					onClick={() => changeQuantity({ id: item.id, type: 'minus' })}
 					disabled={quantity === 1}
 				>
-					<MinusIcon fontSize={13} />
-				</Button>
+					<FiMinus />
+				</button>
 
-				<Input
-					{...input}
-					focusBorderColor='green.400'
+				<input
+					className='w-10 opacity-50 text-center'
 					readOnly
-					_hover={{ cursor: 'default' }}
 					value={quantity}
 				/>
 
-				<Button
-					{...inc}
-					onClick={() => changeQuantity({ id: item.id, type: 'plus' })}
+				<button onClick={() => changeQuantity({ id: item.id, type: 'plus' })}>
+					<FiPlus />
+				</button>
+				<button
+					className=' ml-3 text-red'
+					onClick={() => removeFromCart({ id: item.id })}
 				>
-					<AddIcon fontSize={13} />
-				</Button>
-			</HStack>
-
-			<Button
-				variant='unstyled'
-				color='#F23C3D'
-				marginTop={2}
-				size='sm'
-				opacity={0.8}
-				onClick={() => removeFromCart({ id: item.id })}
-			>
-				Remove
-			</Button>
+					<FiTrash />
+				</button>
+			</div>
 		</div>
 	)
 }

@@ -7,20 +7,13 @@ import { useCart } from '../../../../hooks/useCart'
 import { useActions } from '../../../../hooks/useActions'
 import { Provider } from 'react-redux'
 
-interface ICatalogItem {
-	image: string
-	model: string
-	price: string
-	type: string
-}
-
 const CatalogItem: FC<IProduct> = product => {
-	// const { cart } = useCart()
-	// const { addToCart, removeFromCart } = useActions()
+	const { cart } = useCart()
+	const { addToCart, removeFromCart } = useActions()
 
-	// const currentElement = cart.find(
-	// 	cartItem => cartItem.product.id === product.id
-	// )
+	const currentElement = cart.find(
+		cartItem => cartItem.product.id === product.id
+	)
 
 	return (
 		<Column size={2} className={styles.card}>
@@ -30,18 +23,17 @@ const CatalogItem: FC<IProduct> = product => {
 				<span>Price: {product.price}</span>
 				<span>Type: {product.type}</span>
 				<div>
-					{/* <button
+					<button
 						onClick={() =>
 							currentElement
 								? removeFromCart({ id: currentElement.id })
 								: addToCart({
 										product,
-										quantity: 1
-								  })
+										quantity: 1 })
 						}
 					>
 						Add to cart
-					</button> */}
+					</button>
 				</div>
 			</div>
 		</Column>
