@@ -37,6 +37,12 @@ const CartActions: FC<{ item: ICartItem }> = ({ item }) => {
 				>
 					<FiTrash />
 				</button>
+				<button
+					className='ml-5 btn-yellow'
+					onClick={() => removeFromCart({ id: item.id })}
+				>
+					BUY
+				</button>
 			</div>
 		</div>
 	)

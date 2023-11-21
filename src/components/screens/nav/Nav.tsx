@@ -3,8 +3,10 @@ import Row from '../../ui/grid/Row'
 import Column from '../../ui/grid/Column'
 import logo from '../../../../public/images/logo.svg'
 import { Link } from 'react-router-dom'
+import { useCart } from '../../../hooks/useCart'
 
 const Nav: FC = () => {
+	const { cart } = useCart()
 	return (
 		<Row className=' text-[#FDE047] p-4'>
 			<Column size={2}>
@@ -20,16 +22,19 @@ const Nav: FC = () => {
 				<Link to={'/catalog'} className='btn'>
 					Catalog
 				</Link>
-				<Link to={'/accessories'} className='btn'>
-					Accessories
-				</Link>
-				{/* <Link to={"/veloclub"} className="btn">
-          Veloclub
-        </Link> */}
 				<Link to={'/about-us'} className='btn'>
 					About us
 				</Link>
-        <Link to={'/Cart'} className='btn'>Cart</Link>
+				<Link to={'/Cart'} className='btn relative'>
+					Cart
+					{cart.length ? (
+						<span className=' absolute mr-4 flex h-3 w-3 items-center justify-center rounded-full bg-red p-1 text-[0.7rem] text-white -top-[0.05rem] -right-6'>
+							{cart.length}
+						</span>
+					) : (
+						<></>
+					)}
+				</Link>
 			</Column>
 		</Row>
 	)

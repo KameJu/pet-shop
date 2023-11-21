@@ -68,3 +68,11 @@ h1 {
 .card:hover {
 	@apply shadow-lg shadow-[#423F3F];
 }
+
+.btn-link {
+	@apply uppercase border-b border-white/50;
+}
+
+.btn-link:hover{
+	@apply border-b border-white
+}

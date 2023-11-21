@@ -16,7 +16,7 @@ const MenuNav: FC = () => {
           <button onClick={() => nav("/catalog")} className="btn-gray">
             TO CATALOG
           </button>
-          <button onClick={() => nav("/veloclub")} className="btn-yellow">
+          <button onClick={() => nav("/about-us")} className="btn-yellow">
             JOIN THE CLUB
           </button>
         </div>

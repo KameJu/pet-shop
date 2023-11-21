@@ -1,11 +1,9 @@
 import { FC } from 'react'
 import Column from '../../../ui/grid/Column'
-import bike from '../../../../assets/images/bike_3.png'
 import styles from './CatalogItem.module.scss'
 import { IProduct } from '../../../../types/product.interface'
 import { useCart } from '../../../../hooks/useCart'
 import { useActions } from '../../../../hooks/useActions'
-import { Provider } from 'react-redux'
 
 const CatalogItem: FC<IProduct> = product => {
 	const { cart } = useCart()
@@ -22,14 +20,16 @@ const CatalogItem: FC<IProduct> = product => {
 				<span>Model: {product.model}</span>
 				<span>Price: {product.price}</span>
 				<span>Type: {product.type}</span>
-				<div>
+				<div className='text-center mt-2'>
 					<button
+						className='btn-link'
 						onClick={() =>
 							currentElement
 								? removeFromCart({ id: currentElement.id })
 								: addToCart({
 										product,
-										quantity: 1 })
+										quantity: 1
+								  })
 						}
 					>
 						Add to cart
