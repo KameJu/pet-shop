@@ -4,6 +4,7 @@ import styles from './CatalogItem.module.scss'
 import { IProduct } from '../../../../types/product.interface'
 import { useCart } from '../../../../hooks/useCart'
 import { useActions } from '../../../../hooks/useActions'
+import { formatToCurrency } from '../../../../utils/format-to-currency'
 
 const CatalogItem: FC<IProduct> = product => {
 	const { cart } = useCart()
@@ -18,7 +19,7 @@ const CatalogItem: FC<IProduct> = product => {
 			<img src={product.image} alt='image' />
 			<div className='flex flex-col p-3'>
 				<span>Model: {product.model}</span>
-				<span>Price: {product.price}</span>
+				<span>Price: {formatToCurrency(product.price)}</span>
 				<span>Type: {product.type}</span>
 				<div className='text-center mt-2'>
 					<button

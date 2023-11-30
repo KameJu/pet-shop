@@ -8,7 +8,6 @@ import img2 from '../../../../public/images/hik_2.jpg'
 import img3 from '../../../../public/images/hik_3.webp'
 
 import img4 from '../../../../public/images/hik_4.jpg'
-import Row from '../../ui/grid/Row'
 
 const AboutUs: FC = () => {
 	return (

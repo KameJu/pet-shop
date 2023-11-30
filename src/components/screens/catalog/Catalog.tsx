@@ -1,33 +1,27 @@
-import { FC } from 'react'
+import { FC, createContext, useContext } from 'react'
 import Nav from '../nav/Nav'
 import Row from '../../ui/grid/Row'
 import Column from '../../ui/grid/Column'
-import CatalogItem from './catalog-item/CatalogItem'
-import { products } from './catalog-item/products.data.ts'
-import { formatToCurrency } from '../../../utils/format-to-currency.js'
+import CatalogFilter from './catalog-filter/CatalogFilter.tsx'
+import CatalogList from './catalog-list/CatalogList.tsx'
+import {
+	ProductContext,
+	ProductContextProvider
+} from '../../../context/ProudctContext.tsx'
 
 const Catalog: FC = () => {
 	return (
-		<>
+		<ProductContextProvider>
 			<Nav />
 			<Row>
-				<Column size={2} />
+				<Column size={2}>
+					<CatalogFilter />
+				</Column>
 				<Column size={10} className='pr-10'>
-					<Row>
-						{products.map(product => (
-							<CatalogItem
-								key={product.id}
-								id={product.id}
-								image={product.image}
-								type={product.type}
-								price={product.price}
-								model={product.model}
-							/>
-						))}
-					</Row>
+					<CatalogList products={useContext(ProductContext)} />
 				</Column>
 			</Row>
-		</>
+		</ProductContextProvider>
 	)
 }
 
